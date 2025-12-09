@@ -6,6 +6,9 @@ namespace App\Http\Controllers\Api\V1\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\Auth\SignInRequest;
+use App\Http\Resources\Api\V1\Users\UserResource;
+use App\Utils\Constants;
+use Illuminate\Database\Eloquent\Attributes\UseResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,15 +38,11 @@ final class SignInController extends Controller
         $plainTextToken = $user->createToken($deviceName)->plainTextToken;
 
         return response()->success(
-            message: 'Signed in successfully.',
+            message: Constants::MSG_SIGNED_IN,
             payload: [
                 'token' => $plainTextToken,
                 'type' => 'Bearer',
-                'user' => [
-                    'id' => $user->getAttribute('id'),
-                    'name' => $user->getAttribute('name'),
-                    'email' => $user->getAttribute('email'),
-                ],
+                'user' => new UserResource($user),
             ],
         );
     }

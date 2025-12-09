@@ -9,6 +9,8 @@ final class Constants
     // Generic messages
     public const MSG_OK = 'OK';
 
+    public const MSG_SIGNED_IN = 'Signed in successfully.';
+
     // Users / Artists messages
     public const MSG_ARTISTS_FETCHED = 'Artists fetched successfully.';
 
