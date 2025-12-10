@@ -18,6 +18,9 @@ final class Constants
 
     public const MSG_USER_FETCHED = 'User fetched successfully.';
 
+    // Contact
+    public const MSG_CONTACT_RECEIVED = 'Your message has been received.';
+
     // Pagination
     public const DEFAULT_PER_PAGE = 15;
 

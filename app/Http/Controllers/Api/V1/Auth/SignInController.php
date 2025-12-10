@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\Auth\SignInRequest;
 use App\Http\Resources\Api\V1\Users\UserResource;
 use App\Utils\Constants;
-use Illuminate\Database\Eloquent\Attributes\UseResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 

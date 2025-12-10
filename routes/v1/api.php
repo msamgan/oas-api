@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Http\Controllers\Api\V1\Artists\ArtistsController;
 use App\Http\Controllers\Api\V1\Auth\SignInController;
 use App\Http\Controllers\Api\V1\Auth\SignOutController;
+use App\Http\Controllers\Api\V1\Contact\ContactController;
 use App\Http\Controllers\Api\V1\Roles\RolesController;
 use App\Http\Controllers\Api\V1\Users\UserController;
 use App\Utils\Constants;
@@ -21,6 +22,9 @@ Route::prefix('v1')->group(function () {
 
     Route::post('/users', [UserController::class, 'store']);
     Route::get('/users/{user:slug}', [UserController::class, 'show']);
+
+    // Contact
+    Route::post('/contact', ContactController::class);
 });
 
 //
